@@ -38,3 +38,33 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+/* Styles for smaller viewports (less than 960px) */
+@media (max-width: 959px) {
+    .image-container {
+      width: 100%; /* Adjust container width as needed */
+    }
+  
+    .image-container img {
+      width: 100%; /* Display the image at full width */
+      height: auto; /* Maintain the aspect ratio */
+    }
+  }
+  
+  /* Styles for larger viewports (960px or larger) */
+  @media (min-width: 960px) {
+    .image-container {
+      width: 50%; /* Adjust container width as needed */
+      padding-bottom: 50%; /* Maintain 1:1 aspect ratio (square) */
+      position: relative;
+      overflow: hidden;
+    }
+  
+    .image-container img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%; /* Cover the entire container */
+      height: 100%; /* Maintain the aspect ratio */
+      object-fit: cover; /* Ensure the entire image is displayed */
+    }
+  }
